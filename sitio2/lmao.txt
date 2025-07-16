@@ -1,0 +1,181 @@
+clase de java script
+sintaxis basica, todas las lineas de codigo son declaraciones y se encargan de una
+tarea, parecido a java en ese aspecto y en otro, pues todas las declaraciones 
+finalizan en ;.
+LOS TIPOS DE DATOS QUE MANEJA SON:
+numeros: 10,3.21,-5
+texto: "hola","mundo"
+booleano
+array: [1,2,3]
+objeto:{nombre:"jos",edad: 25}
+
+let= es una palabra clave que declara una variable, antes se usaba var pero let tiene ventajas
+sintaxis {
+let mama= "si";
+}
+VENTAJAS
+let tiene un alcance (scope) de bloque, la variable solo existe dentro de las llaves { } donde fue declarada. Lo que evita problemas cuando
+usas variables con el mismo nombres pero no tienes acceso a ella en otras llaves.
+aparte es mas seguro.
+
+const= es una palabr clave que declara variables constantes que nunca deben cambiar
+sintaxis{
+	const nombre = "jos";
+}
+
+var= declara variables como let pero esta palabra clave no es recomendada para codigo mas moderno
+
+OPERADORES
+sintaxis{
+	let suma = 5+4;
+	let resta = 10-2;
+	let multiplicacion = 4*2;
+	let divison = 16/3;
+	let esigual = 5===5;
+}
+CONDICIONALES 
+sintaxis{
+	let edad = 18;
+	if (edad >= 18){
+	console.log("eres mayor de edad");
+	} else {
+	console.log("eres menor de edad")
+	}
+}
+CICLOS FOR
+sintaxis{
+	for(let i=0;i<5;i++){
+	console.log("repeticion numero:",i)
+	}
+} 
+bien: let i=0 declara la variable y donde inicia, i<5 declara que solo se ejecuta el ciclo si i es menor que 5 y ì++ delcara que i se le suma 1
+
+CICLOS WHILE
+sintaxis{
+	let contador=0;
+	while (contador<5){
+	console.log("contador vale: ",contador);
+	contador++;
+	}
+}
+FUNCIONES
+
+Una función es un bloque de código que realiza una tarea específica. Sirve para encapsular lógica que puedes reutilizar varias veces.
+sintaxis de funcion normal
+function nombreDeLaFuncion() {
+  // Código a ejecutar
+}
+
+sintaxis de funcion con parametros y argumentos
+Los parámetros son variables que recibe la función. Los argumentos son los valores que se pasan al llamar a la función.
+function saludar(nombre) {
+  console.log("Hola, " + nombre);
+}
+saludar("Juan"); // Argumento = "Juan"
+funciones que devuelven valores
+Con return puedes devolver un resultado desde la función.
+function sumar(a, b) {
+  return a + b;
+}
+let resultado = sumar(3, 4);
+console.log(resultado); // 7
+Importante: Todo lo que está después del return ya no se ejecuta.
+ Scope (Ámbito de variables)
+El scope determina dónde son accesibles las variables. Hay dos tipos principales:
+
+Global: disponible en todo el archivo.
+
+Local: solo dentro de la función donde se declara.
+let nombre = "Lucía"; // Variable global
+
+function mostrarNombre() {
+  let edad = 25; // Variable local
+  console.log(nombre); // OK
+  console.log(edad);   // OK
+}
+mostrarNombre();
+console.log(edad); // ❌ Error: edad no está definida
+
+ Funciones Flecha (=>)
+const sumar = (a, b) => a + b;
+console.log(sumar(5, 3)); // 8
+
+FUNCIONES COMO VALORES (FUNCIONES ANONIMAS)
+let multiplicar = function(a, b) {
+  return a * b;
+};
+
+console.log(multiplicar(3, 4)); // 12
+ARRAYS
+es una colección ordenada de valores. Puede contener cualquier tipo de dato: números, cadenas, booleanos, objetos, incluso otros arrays.
+CREAR UN ARRAY
+let frutas = ["manzana", "banana", "naranja"];
+let numeros = [1, 2, 3, 4, 5];
+let vacio = [];
+ACCEDER A ELEMENTOS
+let colores = ["rojo", "verde", "azul"];
+console.log(colores[0]); // "rojo"
+console.log(colores[2]); // "azul"
+MODIFICAR ELEMENTOS
+colores[1] = "amarillo";
+console.log(colores); // ["rojo", "amarillo", "azul"]
+METODOS
+
+Propiedad .length
+Te dice cuántos elementos hay:
+console.log(colores.length); // 3
+push()	Agrega al final
+numeros.push(4);       // [1, 2, 3, 4]
+pop()	Elimina el último
+numeros.pop();         // [0, 1, 2, 3]
+shift()	Elimina el primero
+numeros.shift();       // [1, 2, 3]
+unshift()	Agrega al principio
+numeros.unshift(0);    // [0, 1, 2, 3, 4]
+splice()	Agrega o elimina elementos en una posición
+array.splice(inicio, cantidad, item1, item2, ...)
+inicio: índice donde empieza.
+
+cantidad: cuántos elementos borrar desde ahí.
+
+item1, item2, ... (opcional): elementos que quieres agregar en ese lugar.
+ELIMINA ELEMENTOS
+let colores = ["rojo", "verde", "azul", "amarillo"];
+colores.splice(1, 2); // desde índice 1, elimina 2 elementos
+console.log(colores); // ["rojo", "amarillo"]
+AGREGAR ELEMENTOS
+let numeros = [1, 2, 5];
+numeros.splice(2, 0, 3, 4); // en índice 2, no elimina nada, agrega 3 y 4
+console.log(numeros); // [1, 2, 3, 4, 5]
+REEMPLAZAR ELEMENTOS
+let dias = ["lunes", "martes", "domingo"];
+dias.splice(2, 1, "miércoles", "jueves"); // reemplaza "domingo" con dos días
+console.log(dias); // ["lunes", "martes", "miércoles", "jueves"]
+
+slice()	Crea una copia parcial
+array.slice(inicio, fin);
+Copia desde inicio (incluido) hasta fin (no incluido).
+EJEMPLO:
+let letras = ["a", "b", "c", "d", "e"];
+
+let parte = letras.slice(1, 4); // desde índice 1 hasta 4 (no incluido)
+console.log(parte);      // ["b", "c", "d"]
+console.log(letras);     // original no cambia: ["a", "b", "c", "d", "e"]
+OTRO EJEMPLO:
+let desdeC = letras.slice(2); // desde "c" hasta el final
+console.log(desdeC); // ["c", "d", "e"]
+RECORRER ARRAY
+FOR
+let frutas = ["manzana", "pera", "uva"];
+for (let i = 0; i < frutas.length; i++) {
+  console.log(`Fruta #${i}: ${frutas[i]}`);
+}
+FOR EACH()
+frutas.forEach(function(fruta, indice) {
+  console.log(`Fruta #${indice}: ${fruta}`);
+});
+FOR OF
+util si no necesitas el indice
+for (let fruta of frutas) {
+  console.log(fruta);
+}
