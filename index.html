@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Slider de Imágenes</title>
+  <link rel="stylesheet" href="estilos.css">
+
+  <style type="text/css">
+    .slider {
+      position: relative;
+      width: 600px;
+      height: 400px;
+      margin: auto;
+      overflow: hidden;
+    }
+
+    .slide {
+      display: none;
+      width: 100%;
+      height: 100%;
+    }
+
+    .slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .active {
+      display: block;
+    }
+
+    .botones {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .titulo {
+      font-size: 50px;
+    }
+    span{
+      width: 110px;
+      
+      float: left;
+     
+    }
+  </style>
+</head>
+<body>
+  <div class="titulo">
+    <p>BIENVENIDOS</p>
+  </div>
+  <div class="slider">
+    <div class="slide">
+      <img src="img/descarga (1).jpg" alt="slide 1">
+    </div>
+    <div class="slide">
+      <img src="img/descarga (2).jpg" alt="slide 2">
+    </div>
+    <div class="slide">
+      <img src="img/descarga.jpg" alt="Slide3">
+    </div>
+    <div class="slide">
+      <img src="img/descargar.webp">
+    </div>
+    <div class="slide active">
+      <a href="paginas/pagina.html" ><img src="img/kos.webp"></a>
+    </div>
+  </div>
+  <div class="botones">
+    <button onclick="cambiarSlide(-1)">Anterior</button>
+    <button onclick="cambiarSlide(1)">Siguiente</button>
+  </div>
+  <script src="js/codigo.js"></script>
+<main>
+  <form id="formulario" method="POST" action="js/">
+    <fieldset>
+      <legend>DATOS DE REGISTRO</legend>
+      <span>CEDULA</span>
+      <input type="text" name="textcedula" class="texto" maxlength="10" minlength="10" placeholder="inserte CEDULA" required><br>
+      <span>NOMBRES</span>
+      <input type="text" name="textnombre" class="texto" placeholder="inserte NOMBRES" required><br>
+      <span>APELLIDOS</span>
+      <input type="text" name="textapellidos" class="texto" placeholder="inserte APELLIDOS" required><br>
+      <span>USUARIO</span>
+      <input type="text" name="textusuario" class="texto" placeholder="inserte USUARIO" required><br>
+      <span>CONTRASEÑA</span>
+      <input type="password" name="textapellidos" class="texto" placeholder="inserte CONTRASEÑA" required><br>
+      <span>ESTADO CIVIL</span>
+      CASADO<input type="radio" name="estado civil"required><br>
+      SOLTERO<input type="radio" name="estado civil"required><br>
+      DIVORCIADO<input type="radio" name="estado civil"required><br>
+      <input type="submit" name="holi" value="digame">
+    </fieldset>
+  </form>
+</main>
+</body>
+</html>
